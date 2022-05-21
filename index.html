@@ -18,7 +18,76 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+    <div id="logo">
 
+    </div>
+    <form>
+        <div data-step>
+            <h2>Welcome to Sunset Restaurant</h2>
+            <h4>This interactive booking system will guide you through the steps.</h4>
+            <input type="text" placeholder="May I take your name?">
+            <input type="button" value="Be seated!">
+        </div>
+        <div data-step>
+            <h2>Nice to meet you <span>NAME</span></h2>
+            <h4>How many seats would you like to book?</h4>
+            <input type="text" placeholder="Enter number of seats here...">
+            <div class="navigation">
+                <input type="button" value="Change my name">
+                <input type="button" value="Proceed to the next step">
+                <div class="steps-counter">
+
+                </div>
+            </div>
+        </div>
+        <div data-step>
+            <h2>Sunset Restaurant</h2>
+            <h4>Thank you <span>Name</span>. You have seleceted <span>SEATS</span> seat(s).</h4>
+            <h4>Please select the date you'd like to visit our Restaurant.</h4>
+            <input type="date" name="date" id="dateInput">
+            <input type="button" value="Is it available?">
+
+            <div class="navigation">
+                <input type="button" value="Change my name">
+                <input type="button" value="Proceed to the next step">
+                <div class="steps-counter">
+
+                </div>
+            </div>
+        </div>
+        <div data-step>
+            <h2>Sunset Restaurant</h2>
+            <h4>Great! What time would you like to come?</h4>
+            <input type="datetime" name="time" id="timeInput">
+
+            <div class="navigation">
+                <input type="button" value="Change my name">
+                <input type="button" value="Proceed to the next step">
+                <div class="steps-counter">
+
+                </div>
+            </div>
+        </div>
+        <div data-step>
+            <h2>Sunset Restaurant</h2>
+            <h4>If you are hungry already <span>NAME</span>, then you can preorder your meal so you will not have to
+                wait once you arrive.</h4>
+
+            <div class="carousel">
+                FOOD carousel HERE
+            </div>
+            <div class="navigation">
+                <input type="button" value="Start over">
+                <input type="button" value="Proceed to the next step">
+                <div class="steps-counter">
+
+                </div>
+            </div>
+        </div>
+        <div data-step>FINISH AND SUBMIT
+            <button type="submit">Book my table</button>
+        </div>
+    </form>
     <script src="" async defer></script>
 </body>
 
