@@ -1,17 +1,26 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../img/hero1280gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #logo {
-    img {
-        width: 50px;
+    text-align: center;
 
+
+    img {
+        width: 5rem;
+        text-align: center;
     }
 }
 
 .page {
-    background-color: #fff;
     border: 1px solid #333;
     border-radius: .5rem;
     padding: 1rem;
