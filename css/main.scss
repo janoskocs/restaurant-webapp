@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
 * {
     padding: 0;
     margin: 0;
@@ -8,6 +11,77 @@ body {
     background: url('../img/hero1280gradient.jpg');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+h2 {
+    @include header-text;
+}
+
+// HEADER-TEXT
+
+h4 {
+    @include general-text($main-color, 0px 2px 20px $accent-orange);
+}
+
+//DESCRIPTION TEXT
+
+//INPUT STYLES BEGIN HERE
+input {
+    @include input-style-reset;
+    @include general-text($main-color, none);
+
+    &::placeholder {
+        color: $light-blue;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $light-blue;
+    }
+
+    &:-ms-input-placeholder {
+        color: $light-blue;
+    }
+
+    //PLACEHOLDER COLORS!
+}
+
+input[type="text"] {
+    color: $accent-color;
+}
+
+input[type="button"] {
+    padding: $medium;
+
+    &:after {
+        @include border-bottom-expand;
+    }
+
+    &:hover:after {
+        transform: scaleX(1);
+    }
+}
+
+// INPUT STYLES END HERE
+
+//ERROR BOX STYLES BEGIN HERE
+
+.error-box {
+    @include general-text($error-red, none);
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: $medium;
+}
+
+//ERROR BOX STYLES END HERE
+
+.navigation {
+    .steps-counter {
+        display: flex;
+        gap: $medium;
+        font-size: $medium;
+        color: $main-color;
+    }
 }
 
 #logo {

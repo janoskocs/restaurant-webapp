@@ -27,12 +27,18 @@
             <h2>Welcome to Sunset Restaurant</h2>
             <h4>This interactive booking system will guide you through the steps.</h4>
             <input type="text" placeholder="May I take your name?">
+            <div class="error-box">
+                <p>ERROR MESSAGE</p>
+            </div>
             <input type="button" value="Be seated! &#8594;">
         </div>
         <div data-step class="page">
             <h2>Nice to meet you <span>NAME</span></h2>
             <h4>How many seats would you like to book?</h4>
             <input type="text" placeholder="Enter number of seats here...">
+            <div class="error-box">
+                <p>ERROR MESSAGE</p>
+            </div>
             <div class="navigation">
                 <input type="button" value="&#x2190; Change my name">
                 <input type="button" value="Proceed to the next step &#8594;">
@@ -51,7 +57,9 @@
             <h4>Please select the date you'd like to visit our Restaurant.</h4>
             <input type="date" name="date" id="dateInput">
             <input type="button" value="Is it available?">
-
+            <div class="error-box">
+                <p>ERROR MESSAGE</p>
+            </div>
             <div class="navigation">
                 <input type="button" value="&#x2190; Go back">
                 <input type="button" value="Proceed to the next step &#8594;">
@@ -68,7 +76,9 @@
             <h2>Sunset Restaurant</h2>
             <h4>Great! What time would you like to come?</h4>
             <input type="datetime" name="time" id="timeInput">
-
+            <div class="error-box">
+                <p>ERROR MESSAGE</p>
+            </div>
             <div class="navigation">
                 <input type="button" value="&#x2190; Go back">
                 <input type="button" value="Proceed to the next step &#8594;">
@@ -89,6 +99,9 @@
             <div class="carousel">
                 FOOD carousel HERE
             </div>
+            <div class="error-box">
+                <p>ERROR MESSAGE</p>
+            </div>
             <div class="navigation">
                 <input type="button" value="&#x2190; Start over">
                 <input type="button" value="Proceed to the next step &#8594;">
@@ -104,13 +117,19 @@
         <div data-step class="page">FINISH AND SUBMIT
             <button type="submit">Book my table</button>
         </div>
-        <div class="steps-counter">
-            <p>&#x278A;</p>
-            <p>&#x2777;</p>
-            <p>&#x278C;</p>
-            <p>&#x278D;</p>
-            <p>&#x278E;</p>
+        <div class="error-box">
+            <p>ERROR MESSAGE</p>
         </div>
+        <div class="navigation">
+            <div class="steps-counter">
+                <p>&#x278A;</p>
+                <p>&#x2777;</p>
+                <p>&#x278C;</p>
+                <p>&#x278D;</p>
+                <p>&#x278E;</p>
+            </div>
+        </div>
+
     </form>
     <script src="" async defer></script>
 </body>
