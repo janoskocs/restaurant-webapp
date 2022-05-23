@@ -29,6 +29,7 @@ h4 {
 input {
     @include input-style-reset;
     @include general-text($main-color, none);
+    margin: $large;
 
     &::placeholder {
         color: $light-blue;
@@ -43,15 +44,29 @@ input {
         color: $light-blue;
     }
 
+
+
     //PLACEHOLDER COLORS!
 }
 
 input[type="text"] {
+    display: inline-block;
     color: $accent-color;
+
+    &:after {
+        @include border-bottom-expand;
+    }
+
+    &:hover:after {
+        transform: scaleX(1);
+    }
+
 }
 
-input[type="button"] {
-    padding: $medium;
+button {
+    @include input-style-reset;
+
+    @include general-text($main-color, none);
 
     &:after {
         @include border-bottom-expand;
@@ -61,6 +76,7 @@ input[type="button"] {
         transform: scaleX(1);
     }
 }
+
 
 // INPUT STYLES END HERE
 
