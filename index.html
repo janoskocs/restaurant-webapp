@@ -26,7 +26,7 @@
         <div data-step class="page">
             <h2>Welcome to Sunset Restaurant</h2>
             <h4>This interactive booking system will guide you through the steps.</h4>
-            <input type="text" placeholder="May I take your name?">
+            <input type="text" data-customer-name placeholder="May I take your name?">
             <div class="error-box">
                 <p>ERROR MESSAGE</p>
             </div>
@@ -34,7 +34,7 @@
             <button type="button" data-next>Be seated! &#8594;</button>
         </div>
         <div data-step class="page">
-            <h2>Nice to meet you <span>NAME</span></h2>
+            <h2>Nice to meet you <span data-customer-name-show class="customer-name-span">NAME</span></h2>
             <h4>How many seats would you like to book?</h4>
             <input type="text" placeholder="Enter number of seats here...">
             <div class="error-box">
@@ -55,7 +55,8 @@
         </div>
         <div data-step class="page">
             <h2>Sunset Restaurant</h2>
-            <h4>Thank you <span>Name</span>. You have seleceted <span>SEATS</span> seat(s).</h4>
+            <h4>Thank you <span data-customer-name-show class="customer-name-span">Name</span>. You have seleceted <span
+                    data-seat-count>SEATS</span> seat(s).</h4>
             <h4>Please select the date you'd like to visit our Restaurant.</h4>
             <input type="date" name="date" id="dateInput">
             <input type="button" value="Is it available?">

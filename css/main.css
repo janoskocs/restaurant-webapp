@@ -164,4 +164,8 @@ button:hover:after {
   display: -ms-flexbox;
   display: flex;
 }
+
+.customer-name-span {
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=main.css.map */

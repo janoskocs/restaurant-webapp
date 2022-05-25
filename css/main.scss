@@ -125,3 +125,7 @@ button {
 .active {
     display: flex;
 }
+
+.customer-name-span {
+    text-transform: capitalize;
+}
