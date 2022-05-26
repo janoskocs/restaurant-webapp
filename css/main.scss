@@ -92,11 +92,14 @@ button {
 //ERROR BOX STYLES END HERE
 
 .navigation {
+
     .steps-counter {
         display: flex;
         gap: $medium;
         font-size: $medium;
         color: $main-color;
+        margin: 0 auto;
+
     }
 }
 
@@ -111,11 +114,7 @@ button {
 }
 
 .page {
-    border: 1px solid #333;
-    border-radius: .5rem;
-    padding: 1rem;
     height: 80vh;
-
     display: none;
     flex-direction: column;
     justify-content: space-between;

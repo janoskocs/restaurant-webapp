@@ -13,7 +13,7 @@ if (currentStep < 0) {//FIND INDEX RETURNS -1 IF NO ELEMENT HAS ACTIVE CLASS
 multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
 
-        customerNameInput()
+        //customerNameInput()
         currentStep += 1
     } else if (e.target.matches('[data-previous]')) {
         currentStep -= 1
