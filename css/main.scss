@@ -126,6 +126,10 @@ button {
     display: flex;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .customer-name-span {
     text-transform: capitalize;
 }
