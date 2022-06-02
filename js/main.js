@@ -1,3 +1,7 @@
+function log(element) {
+    console.log(element)
+}
+
 const multiStepForm = document.querySelector('[data-multi-step]')
 
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
@@ -21,12 +25,35 @@ multiStepForm.addEventListener('click', e => {
     }
 
     if (incrementor == null) return // if nothing is clicked do nothing
-    currentStep += incrementor
-    showCurrentStep()
+
+    const inputs = [...formSteps[currentStep].querySelectorAll('input')]
+    const allValid = inputs.every(input => {
+        if (currentStep === 0) {
+            if (input.value !== '') {
+                return true
+            } else {
+                showError('Please enter your name...')
+            }
+        }
+
+    })
+
+    if (allValid) {
+        currentStep += incrementor
+        showCurrentStep()
+    }
+
 })
 
 function showCurrentStep() {
     formSteps.forEach((step, index) => {
         step.classList.toggle('active', index === currentStep)
     })
+}
+
+function showError(message) {
+    const errorBoxText = multiStepForm.querySelectorAll('[data-error]')
+    const errorBox = multiStepForm.querySelectorAll('[data-error-container]')
+    errorBox[currentStep].classList.toggle('hidden')
+    errorBoxText[currentStep].innerText = message;
 }

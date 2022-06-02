@@ -27,8 +27,8 @@
             <h2>Welcome to Sunset Restaurant</h2>
             <h4>This interactive booking system will guide you through the steps.</h4>
             <input type="text" data-customer-name placeholder="May I take your name?">
-            <div class="error-box hidden">
-                <p>Something went wrong. Please refresh the page.</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
 
             <button type="button" data-next>Be seated! &#8594;</button>
@@ -37,8 +37,8 @@
             <h2>Nice to meet you <span data-customer-name-show class="customer-name-span">NAME</span></h2>
             <h4>How many seats would you like to book?</h4>
             <input type="text" placeholder="Enter number of seats here...">
-            <div class="error-box">
-                <p>ERROR MESSAGE</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
             <div class="navigation">
                 <button type="button" data-previous>&#x2190; Change my name</button>
@@ -60,8 +60,8 @@
             <h4>Please select the date you'd like to visit our Restaurant.</h4>
             <input type="date" name="date" id="dateInput">
             <input type="button" value="Is it available?">
-            <div class="error-box">
-                <p>ERROR MESSAGE</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
             <div class="navigation">
                 <button type="button" data-previous>&#x2190; Go back</button>
@@ -79,8 +79,8 @@
             <h2>Sunset Restaurant</h2>
             <h4>Great! What time would you like to come?</h4>
             <input type="datetime" name="time" id="timeInput">
-            <div class="error-box">
-                <p>ERROR MESSAGE</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
             <div class="navigation">
                 <button type="button" data-previous>&#x2190; Go back</button>
@@ -102,8 +102,8 @@
             <div class="carousel">
                 FOOD carousel HERE
             </div>
-            <div class="error-box">
-                <p>ERROR MESSAGE</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
             <div class="navigation">
                 <button type="button" data-previous>&#x2190; Go back</button>
@@ -118,8 +118,8 @@
             </div>
         </div>
         <div data-step class="page">FINISH AND SUBMIT
-            <div class="error-box">
-                <p>ERROR MESSAGE</p>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
             <div class="navigation">
                 <div class="steps-counter">
