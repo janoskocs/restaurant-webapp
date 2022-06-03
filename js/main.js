@@ -6,6 +6,8 @@ const multiStepForm = document.querySelector('[data-multi-step]')
 
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
 
+const foodContainer = multiStepForm.querySelector('[data-food-container]')
+const foodItems = [...foodContainer.querySelectorAll('[data-food]')]
 //FLAGS
 const customerNameGreetPage = 0
 const seatCountPage = 1
@@ -90,6 +92,11 @@ multiStepForm.addEventListener('click', e => {
 
 })
 
+foodContainer.addEventListener('click', e => {
+    if (e.target.matches('[data-food]')) {
+        e.target.classList.toggle('selected')
+    }
+})
 
 function showCurrentStep() {
     formSteps.forEach((step, index) => {

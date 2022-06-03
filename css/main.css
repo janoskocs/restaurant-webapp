@@ -171,4 +171,47 @@ button:hover:after {
 .customer-name-span {
   text-transform: capitalize;
 }
+
+#carousel ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#carousel ul li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.35rem;
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+#carousel ul li:hover {
+  cursor: pointer;
+  border: 1px solid #FF69B4;
+}
+
+#carousel ul li img {
+  width: 128px;
+  pointer-events: none;
+}
+
+#carousel ul li p {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+#carousel ul .selected {
+  background-color: #19628d;
+}
 /*# sourceMappingURL=main.css.map */

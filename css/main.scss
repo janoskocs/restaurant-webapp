@@ -133,3 +133,42 @@ button {
 .customer-name-span {
     text-transform: capitalize;
 }
+
+#carousel {
+
+
+    ul {
+        display: flex;
+
+
+        li {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            margin: $small/2;
+            padding: $small;
+            text-align: center;
+            border: 1px solid transparent;
+
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $accent-color;
+            }
+
+            img {
+                width: 128px;
+                pointer-events: none; //AVOID E.TARGET RETURNING THIS ELEMENT
+            }
+
+            p {
+                @include general-text($main-color, none);
+                pointer-events: none; // THIS IS TO AVOID E.TARGET RETURNING THIS ELEMENT
+            }
+        }
+
+        .selected {
+            background-color: $blue;
+        }
+    }
+}
