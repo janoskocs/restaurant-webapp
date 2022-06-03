@@ -78,7 +78,8 @@
         <div data-step class="page">
             <h2>Sunset Restaurant</h2>
             <h4>Great! What time would you like to come?</h4>
-            <input type="datetime" name="time" id="timeInput">
+            <input type="time" name="time" id="timeInput" min="09:00" max="20:00" step="900">
+
             <div class="error-box hidden" data-error-container>
                 <p data-error>Something went wrong. Please refresh the page.</p>
             </div>

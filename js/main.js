@@ -50,14 +50,27 @@ multiStepForm.addEventListener('click', e => {
                     showError('Please enter a valid number less than 7...')
                     break;
                 }
-                // code block
-                break;
             case 2:
-                // code block
-                break;
+                inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
+                if (isDateValid(inputs)) {
+                    currentStep += 1
+                    showCurrentStep()
+                    break;
+                } else {
+                    showError('Selected date must not be in the past...')
+                    break;
+                }
             case 3:
-                // code block
-                break;
+                inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
+                if (isTimeValid(inputs)) {
+                    log(inputs)
+                    currentStep += 1
+                    showCurrentStep()
+                    break;
+                } else {
+                    showError('I am afraid we are open from 9AM until 8PM...')
+                    break;
+                }
             case 4:
                 // code block
                 break;
@@ -100,6 +113,24 @@ const isInputValid = (input) => {
 }
 const isNumberValid = (input) => {
     if (!isNaN(input) && input < 7) {
+        return true
+    } else {
+        return false
+    }
+}
+
+const isDateValid = (input) => {
+    const today = new Date()
+    if (new Date(input).getTime() >= today.getTime()) {
+        return true
+    } else {
+        return false
+    }
+}
+
+const isTimeValid = (input) => {
+    const hour = parseInt(input.split(':')[0])
+    if (hour > 9 && hour < 21) {
         return true
     } else {
         return false
