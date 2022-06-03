@@ -27,9 +27,9 @@ if (currentStep < 0) {
 multiStepForm.addEventListener('click', e => {
 
     if (e.target.matches('[data-next]')) {
+        let inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
         switch (currentStep) {
             case 0:
-                const inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
                 if (isInputValid(inputs)) {
                     spanUpdate(inputs)
                     currentStep += 1
@@ -39,9 +39,17 @@ multiStepForm.addEventListener('click', e => {
                     showError('Please enter your name...')
                     break;
                 }
-
-                break;
             case 1:
+                inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
+                if (isNumberValid(inputs)) {
+                    spanUpdate(inputs)
+                    currentStep += 1
+                    showCurrentStep()
+                    break;
+                } else {
+                    showError('Please enter a valid number less than 7...')
+                    break;
+                }
                 // code block
                 break;
             case 2:
@@ -90,11 +98,25 @@ const isInputValid = (input) => {
         return false
     }
 }
+const isNumberValid = (input) => {
+    if (!isNaN(input) && input < 7) {
+        return true
+    } else {
+        return false
+    }
+}
 
-const spanUpdate = (customerName) => {
-    const nameHolderSpans = [...multiStepForm.querySelectorAll('[data-customer-name-show]')]
+const spanUpdate = (textUpdateVariable) => {
+    if (currentStep === 0) {
+        const nameHolderSpans = [...multiStepForm.querySelectorAll('[data-customer-name-show]')]
+        nameHolderSpans.forEach(span => {
+            span.innerText = textUpdateVariable
+        })
+    } else if (currentStep === 1) {
+        const seatCountHolderSpans = [...multiStepForm.querySelectorAll('[data-seat-count]')]
+        seatCountHolderSpans.forEach(span => {
+            span.innerText = textUpdateVariable
+        })
+    }
 
-    nameHolderSpans.forEach(span => {
-        span.innerText = customerName
-    })
 }
