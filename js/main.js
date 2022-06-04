@@ -10,8 +10,8 @@ let preOrderedFood = []
 const multiStepForm = document.querySelector('[data-multi-step]')
 
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
-
 const foodContainer = multiStepForm.querySelector('[data-food-container]')
+const summaryTextField = multiStepForm.querySelector('[data-summary-text]')
 const foodItems = [...foodContainer.querySelectorAll('[data-food]')]
 //FLAGS
 const customerNameGreetPage = 0
@@ -20,6 +20,7 @@ const dateSelectionPage = 2
 const timeSelectionPage = 3
 const foodCarouselPage = 4
 const submitPage = 5
+
 
 //FLAGS END HERE
 let currentStep = formSteps.findIndex(step => {
@@ -83,10 +84,8 @@ multiStepForm.addEventListener('click', e => {
                 }
             case foodCarouselPage:
                 currentStep += 1
+                showSummaryBooking()
                 showCurrentStep()
-                break;
-            case submitPage:
-
                 break;
             default:
             // code block
@@ -104,17 +103,13 @@ multiStepForm.addEventListener('click', e => {
 foodContainer.addEventListener('click', e => {
     if (e.target.matches('[data-food]')) {
         e.target.classList.toggle('selected')
-
         const foodName = e.target.children[1].outerText
-
         if (preOrderedFood.includes(foodName)) {
             const foodIndex = preOrderedFood.indexOf(foodName)
             preOrderedFood.splice(foodIndex, 1)
-            log(preOrderedFood)
         }
         else {
             preOrderedFood.push(foodName)
-            log('added' + foodName)
         }
     }
 })
@@ -131,6 +126,17 @@ function showError(message) {
     errorBox[currentStep].classList.toggle('hidden')
     errorBoxText[currentStep].innerText = message;
 }
+
+function showSummaryBooking() {
+    summaryTextField.innerText = `Please double check your booking details. 
+    Name: ${customerName}
+    Booked seats: ${seatCount}
+    Date and time: ${date} ${time}
+    Preordered food: ${preOrderedFood.join(', ')}
+    Booking reference number: ${bookingRefNum()}
+    `
+}
+const bookingRefNum = () => Math.floor(Math.random() * 10000) + 1000
 
 const isInputValid = (input) => {
     if (input.length > 1) {
