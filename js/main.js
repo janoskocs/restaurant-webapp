@@ -1,3 +1,6 @@
+
+
+
 function log(element) {
     console.log(element)
 }

@@ -177,6 +177,8 @@ button:hover:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: transitionInOut 0.75s;
+          animation: transitionInOut 0.75s;
 }
 
 .hidden {
@@ -238,5 +240,31 @@ button:hover:after {
   background: rgba(255, 255, 255, 0.5);
   text-align: center;
   padding: 1.2rem;
+}
+
+@-webkit-keyframes transitionInOut {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes transitionInOut {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
 }
 /*# sourceMappingURL=main.css.map */
