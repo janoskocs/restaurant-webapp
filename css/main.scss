@@ -94,6 +94,8 @@ button {
 //ERROR BOX STYLES END HERE
 
 .navigation {
+    display: flex;
+    flex-direction: column;
 
     .steps-counter {
         display: flex;
@@ -102,6 +104,12 @@ button {
         color: $main-color;
         margin: 0 auto;
 
+    }
+
+    .button-container {
+        button {
+            margin-left: 1em;
+        }
     }
 }
 
