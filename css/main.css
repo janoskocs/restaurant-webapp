@@ -215,4 +215,14 @@ button:hover:after {
 #carousel ul .selected {
   background-color: #19628d;
 }
+
+#summary {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 1.2rem;
+}
 /*# sourceMappingURL=main.css.map */

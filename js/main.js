@@ -128,14 +128,18 @@ function showError(message) {
 }
 
 function showSummaryBooking() {
+
     summaryTextField.innerText = `Please double check your booking details. 
-    Name: ${customerName}
+    Name: ${capitalizeName(customerName)}
     Booked seats: ${seatCount}
     Date and time: ${date} ${time}
     Preordered food: ${preOrderedFood.join(', ')}
     Booking reference number: ${bookingRefNum()}
     `
 }
+
+const capitalizeName = (name) => name.charAt(0).toUpperCase() + name.slice(1)
+
 const bookingRefNum = () => Math.floor(Math.random() * 10000) + 1000
 
 const isInputValid = (input) => {
