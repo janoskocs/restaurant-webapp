@@ -190,6 +190,10 @@ button:hover:after {
   color: #19628d;
 }
 
+.page .hidden-block {
+  display: none;
+}
+
 .active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,6 +208,14 @@ button:hover:after {
 
 .customer-name-span {
   text-transform: capitalize;
+}
+
+#carousel .scroll-instruction {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  visibility: hidden;
 }
 
 #carousel ul {
@@ -225,6 +237,9 @@ button:hover:after {
   padding: 0.7rem;
   text-align: center;
   border: 1px solid transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #carousel ul li:hover {
@@ -233,7 +248,7 @@ button:hover:after {
 }
 
 #carousel ul li img {
-  width: 128px;
+  width: 96px;
   pointer-events: none;
 }
 
@@ -293,6 +308,25 @@ button:hover:after {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding: 0.7rem;
+  }
+  #carousel {
+    width: 100%;
+  }
+  #carousel .scroll-instruction {
+    visibility: visible;
+  }
+  #carousel ul {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  #carousel ul::-webkit-scrollbar {
+    display: none;
+  }
+  #carousel ul li {
+    display: inline-block;
+    margin: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
