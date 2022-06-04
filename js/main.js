@@ -1,6 +1,11 @@
 function log(element) {
     console.log(element)
 }
+let customerName = ''
+let seatCount
+let date
+let time
+let preOrderedFood = []
 
 const multiStepForm = document.querySelector('[data-multi-step]')
 
@@ -31,9 +36,10 @@ multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
         let inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
         switch (currentStep) {
-            case 0:
+            case customerNameGreetPage:
                 if (isInputValid(inputs)) {
                     spanUpdate(inputs)
+                    customerName = inputs
                     currentStep += 1
                     showCurrentStep()
                     break;
@@ -41,10 +47,11 @@ multiStepForm.addEventListener('click', e => {
                     showError('Please enter your name...')
                     break;
                 }
-            case 1:
+            case seatCountPage:
                 inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
                 if (isNumberValid(inputs)) {
                     spanUpdate(inputs)
+                    seatCount = inputs
                     currentStep += 1
                     showCurrentStep()
                     break;
@@ -52,9 +59,10 @@ multiStepForm.addEventListener('click', e => {
                     showError('Please enter a valid number less than 7...')
                     break;
                 }
-            case 2:
+            case dateSelectionPage:
                 inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
                 if (isDateValid(inputs)) {
+                    date = inputs
                     currentStep += 1
                     showCurrentStep()
                     break;
@@ -62,10 +70,10 @@ multiStepForm.addEventListener('click', e => {
                     showError('Selected date must not be in the past...')
                     break;
                 }
-            case 3:
+            case timeSelectionPage:
                 inputs = formSteps[currentStep].querySelectorAll('input')[0].value //ALWAYS SELECTS THE FIRST INPUT ON EACH PAGE 
                 if (isTimeValid(inputs)) {
-                    log(inputs)
+                    time = inputs
                     currentStep += 1
                     showCurrentStep()
                     break;
@@ -73,11 +81,12 @@ multiStepForm.addEventListener('click', e => {
                     showError('I am afraid we are open from 9AM until 8PM...')
                     break;
                 }
-            case 4:
-                // code block
+            case foodCarouselPage:
+                currentStep += 1
+                showCurrentStep()
                 break;
-            case 5:
-                // code block
+            case submitPage:
+
                 break;
             default:
             // code block
@@ -95,6 +104,8 @@ multiStepForm.addEventListener('click', e => {
 foodContainer.addEventListener('click', e => {
     if (e.target.matches('[data-food]')) {
         e.target.classList.toggle('selected')
+        preOrderedFood.push(e.target)
+        log(preOrderedFood)
     }
 })
 
