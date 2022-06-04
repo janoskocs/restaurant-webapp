@@ -104,8 +104,18 @@ multiStepForm.addEventListener('click', e => {
 foodContainer.addEventListener('click', e => {
     if (e.target.matches('[data-food]')) {
         e.target.classList.toggle('selected')
-        preOrderedFood.push(e.target)
-        log(preOrderedFood)
+
+        const foodName = e.target.children[1].outerText
+
+        if (preOrderedFood.includes(foodName)) {
+            const foodIndex = preOrderedFood.indexOf(foodName)
+            preOrderedFood.splice(foodIndex, 1)
+            log(preOrderedFood)
+        }
+        else {
+            preOrderedFood.push(foodName)
+            log('added' + foodName)
+        }
     }
 })
 
