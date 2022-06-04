@@ -191,5 +191,3 @@ const isTimeValid = (input) => { //Check if time is between 9 and 21, I took the
         return false
     }
 }
-
-

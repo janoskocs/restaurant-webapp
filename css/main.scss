@@ -53,6 +53,11 @@ input {
 input[type="text"] {
     display: inline-block;
     color: $accent-color;
+    font-size: $large;
+
+    border-bottom: 1px solid transparent;
+    width: 30vw;
+    text-align: center;
 
     &:after {
         @include border-bottom-expand;
@@ -62,6 +67,9 @@ input[type="text"] {
         transform: scaleX(1);
     }
 
+    &:focus {
+        border-bottom: 1px solid $accent-color;
+    }
 }
 
 button {
@@ -129,6 +137,14 @@ button {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    a {
+        color: $accent-color;
+
+        &:hover {
+            color: $blue;
+        }
+    }
 }
 
 .active {
@@ -145,7 +161,6 @@ button {
 }
 
 #carousel {
-
 
     ul {
         display: flex;
@@ -188,6 +203,8 @@ button {
     background: rgba(255, 255, 255, 0.5);
     text-align: center;
     padding: $medium;
+
+
 }
 
 @keyframes transitionInOut {
