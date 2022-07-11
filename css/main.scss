@@ -73,6 +73,7 @@ input[type="text"] {
     }
 }
 
+
 button {
     cursor: pointer;
     @include input-style-reset;
@@ -88,6 +89,12 @@ button {
     }
 }
 
+input[type="date"],
+input[type="time"] {
+    color: #fff;
+    background-color: $blue;
+    padding: $small;
+}
 
 // INPUT STYLES END HERE
 
@@ -151,6 +158,8 @@ button {
     .hidden-block {
         display: none;
     }
+
+
 }
 
 .active {

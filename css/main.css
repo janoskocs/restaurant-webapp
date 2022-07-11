@@ -123,6 +123,13 @@ button:hover:after {
           transform: scaleX(1);
 }
 
+input[type="date"],
+input[type="time"] {
+  color: #fff;
+  background-color: #19628d;
+  padding: 0.7rem;
+}
+
 .error-box {
   font-family: 'Righteous', sans-serif;
   font-size: 1.2rem;
